@@ -1,1 +1,9 @@
-<p>movie-list works!</p>
+<h1>Movies</h1>
+<div>
+  <button (click)="getAllMovies()">Movies</button>
+</div>
+
+<div *ngFor="let movie of movies; let i = index">
+  <p>{{movie.name}} - {{movie.category.name}}</p>
+</div>
+
