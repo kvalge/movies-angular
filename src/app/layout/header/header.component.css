@@ -1,0 +1,32 @@
+nav {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container-fluid {
+  background-color: #e8e8e8;
+  height: 80px;
+}
+
+.navbar-brand {
+  color: #525252;
+  font-size: 35px;
+  padding-top: 30px;
+  padding-right: 30px;
+}
+
+.active > a {
+  height: 80px;
+  background: #d2d2d2;
+}
+
+li {
+  width: 100px;
+  text-align: center;
+  font-size: 14px;
+}
+
+img{
+  height: 250px;
+  width: 100%;
+}
