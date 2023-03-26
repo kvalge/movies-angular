@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {MovieModel} from "../movie.model";
 import {MovieService} from "../../../services/movie.service";
@@ -13,7 +13,8 @@ export class MovieListComponent implements OnInit {
 
   movies: MovieModel[];
 
-  constructor(private movieService: MovieService, private dataService: DataService) { }
+  constructor(private movieService: MovieService, private dataService: DataService) {
+  }
 
   ngOnInit(): void {
   }
