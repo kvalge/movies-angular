@@ -2,33 +2,24 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
 
-import {MovieModel} from "../pages/movies/movie.model";
+import {MovieDetailsModel} from "../pages/movies/movie-detail-list/movie-details.model";
 
 @Injectable({providedIn: 'root'})
 export class DataService {
+  movies = [];
 
   constructor(private http: HttpClient) {
   }
 
-  getAllMovies() {
-    let movies = [];
-    this.http.get<MovieModel[]>('http://localhost:8080/movie')
+  getAllDetails() {
+    let details = [];
+    this.http.get<MovieDetailsModel[]>('http://localhost:8080/details/all')
       .pipe(map((res) => {
         for (let r of res) {
-          movies.push(r);
+          details.push(r);
         }
       }))
-      .subscribe()
-    return movies;
+      .subscribe();
+    return details;
   }
-
-  /*  getAllMovies() {
-      this.http.get<MovieModel[]>('http://localhost:8080/movie')
-        .pipe(map((movies) => {
-          return movies;
-        }))
-        .subscribe(movies => {
-          this.movieService.setMovies(movies);
-        })
-    }*/
 }

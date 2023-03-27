@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {MovieModel} from "../movie.model";
 import {DataService} from "../../../services/data.service";
+import {MovieDetailsModel} from "../movie-detail-list/movie-details.model";
 
 @Component({
   selector: 'app-movie-list',
@@ -10,12 +11,12 @@ import {DataService} from "../../../services/data.service";
 })
 export class MovieListComponent implements OnInit {
 
-  movies: MovieModel[];
+  details: MovieDetailsModel[];
 
   constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
-    this.movies = this.dataService.getAllMovies();
+    this.details = this.dataService.getAllDetails();
   }
 }

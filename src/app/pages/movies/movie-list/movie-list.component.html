@@ -1,5 +1,11 @@
 <h1>Movies</h1>
-<div *ngFor="let movie of movies; let i = index">
-  <p>{{movie.name}} - {{movie.categoryName}}</p>
+<div *ngFor="let detail of details">
+  <p>{{detail.movieName}}</p>
+  <img src="{{detail.image}}" alt="{{detail.movieName}}" style="max-height: 300px">
+  <p>{{detail.director}}</p>
+  <p>{{detail.stars}}</p>
+  <p>{{detail.year}}</p>
+  <p>{{detail.description}}</p>
 </div>
+
 
