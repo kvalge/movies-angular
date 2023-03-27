@@ -3,6 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from "./app-routing.module";
 import {RouterLinkActive, RouterOutlet} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './layout/header/header.component';
@@ -14,7 +15,7 @@ import {MovieService} from "./services/movie.service";
 import {DataService} from "./services/data.service";
 import { MovieDetailListComponent } from './pages/movies/movie-detail-list/movie-detail-list.component';
 import { MoviesComponent } from './pages/movies/movies.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {AuthService} from "./services/auth.service";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [MovieService, DataService],
+  providers: [MovieService, DataService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
