@@ -10,6 +10,7 @@ import {MoviesComponent} from "./pages/movies/movies.component";
 const appRoutes: Routes = [
   {path: '', redirectTo: '/movies', pathMatch: "full"},
   {path: 'movies', component: MoviesComponent},
+  {path: 'movies/:id', component: RentalsComponent},
   {path: 'rentals', component: RentalsComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'login', component: LoginComponent}

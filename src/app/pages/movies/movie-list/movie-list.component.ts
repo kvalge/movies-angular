@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {DataService} from "../../../services/data.service";
 import {MovieDetailsModel} from "../movie-detail-list/movie-details.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-movie-list',
@@ -12,10 +13,14 @@ export class MovieListComponent implements OnInit {
 
   details: MovieDetailsModel[];
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.details = this.dataService.getAllDetails();
+  }
+
+  toRental() {
+    this.router.navigate(['rentals']);
   }
 }
