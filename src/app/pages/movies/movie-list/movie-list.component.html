@@ -3,14 +3,14 @@
     <div class="col-xs-12">
       <div *ngFor="let detail of details">
         <p class="title">{{detail.movieName}}</p>
+        <p class="year">{{detail.year}}</p>
         <img class="img" src="{{detail.image}}" alt="{{detail.movieName}}"
         >
         <div>
-          <p>Director: {{detail.director}}</p>
+          <p>Directed by: {{detail.director}}</p>
           <p>Stars: {{detail.stars}}</p>
-          <p>{{detail.year}}</p>
           <p>{{detail.description}}</p>
-          <p>---</p>
+          <p>______________</p>
         </div>
       </div>
     </div>
