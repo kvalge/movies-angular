@@ -1,11 +1,20 @@
-<h1>Movies</h1>
-<div *ngFor="let detail of details">
-  <p>{{detail.movieName}}</p>
-  <img src="{{detail.image}}" alt="{{detail.movieName}}" style="max-height: 300px">
-  <p>{{detail.director}}</p>
-  <p>{{detail.stars}}</p>
-  <p>{{detail.year}}</p>
-  <p>{{detail.description}}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div *ngFor="let detail of details">
+        <p class="title">{{detail.movieName}}</p>
+        <img class="img" src="{{detail.image}}" alt="{{detail.movieName}}"
+        >
+        <div>
+          <p>Director: {{detail.director}}</p>
+          <p>Stars: {{detail.stars}}</p>
+          <p>{{detail.year}}</p>
+          <p>{{detail.description}}</p>
+          <p>---</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
