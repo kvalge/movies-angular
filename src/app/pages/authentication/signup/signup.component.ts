@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 import {AuthService} from "../../../services/auth.service";
 
@@ -12,7 +13,8 @@ export class SignupComponent implements OnInit {
 
   userForm: FormGroup;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
@@ -26,6 +28,6 @@ export class SignupComponent implements OnInit {
   onRegister() {
     this.authService.register(this.userForm.value);
     this.userForm.reset();
+    this.router.navigate(['movies']);
   }
-
 }
