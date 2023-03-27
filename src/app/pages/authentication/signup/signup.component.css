@@ -1,0 +1,32 @@
+h5 {
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+h6 {
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.row {
+  margin-top: 30px;
+  text-align: center;
+}
+
+label {
+  font-size: 13px;
+  display: inline-block;
+  text-align: left;
+  width: 100px;
+}
+
+input{
+  font-size: 13px;
+  width: 300px;
+}
+
+button {
+  margin-top: 25px;
+  margin-bottom: 40px;
+}

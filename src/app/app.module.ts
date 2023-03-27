@@ -14,6 +14,7 @@ import {MovieService} from "./services/movie.service";
 import {DataService} from "./services/data.service";
 import { MovieDetailListComponent } from './pages/movies/movie-detail-list/movie-detail-list.component';
 import { MoviesComponent } from './pages/movies/movies.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MoviesComponent } from './pages/movies/movies.component';
     AppRoutingModule,
     RouterLinkActive,
     RouterOutlet,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [MovieService, DataService],
   bootstrap: [AppComponent]
