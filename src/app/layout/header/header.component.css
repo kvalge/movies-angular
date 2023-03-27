@@ -4,12 +4,12 @@ nav {
 }
 
 .container-fluid {
-  background-color: #f1efef;
+  background-color: black;
   height: 80px;
 }
 
 .navbar-brand {
-  color: #525252;
+  color: whitesmoke;
   font-size: 35px;
   padding-top: 30px;
   padding-right: 30px;
@@ -24,10 +24,11 @@ li {
   width: 100px;
   text-align: center;
   font-size: 14px;
+  color: white;
 }
 
 img{
   padding: 0;
-  height: 180px;
+  height: 210px;
   width: 100%;
 }
