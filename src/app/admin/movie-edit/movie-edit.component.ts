@@ -29,8 +29,8 @@ export class MovieEditComponent implements OnInit {
     if (!this.editMode) {
       this.dataService.addNewMovie(this.movieForm.value);
     }
-/*    this.movieForm.reset();
-    this.movie = null;*/
+    this.movieForm.reset();
+    this.movie = null;
   }
 
   onCancel() {
