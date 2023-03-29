@@ -19,6 +19,8 @@ import { MovieDetailsComponent } from './pages/movies/movie-list/movie-details/m
 import { ErrorPageComponent } from './error-page/error-page.component';
 import {AuthGuardService} from "./services/auth-guard.service";
 import {GuardService} from "./services/guard.service";
+import { AdminComponent } from './admin/admin.component';
+import { MovieEditComponent } from './admin/movie-edit/movie-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import {GuardService} from "./services/guard.service";
     MoviesComponent,
     MovieDetailsComponent,
     ErrorPageComponent,
+    AdminComponent,
+    MovieEditComponent,
   ],
   imports: [
     BrowserModule,

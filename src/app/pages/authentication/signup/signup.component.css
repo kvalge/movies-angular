@@ -30,3 +30,12 @@ button {
   margin-top: 25px;
   margin-bottom: 40px;
 }
+
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+.alert {
+  color: red;
+  font-size: 12px;
+}

@@ -8,12 +8,14 @@ import {MoviesComponent} from "./pages/movies/movies.component";
 import {MovieDetailsComponent} from "./pages/movies/movie-list/movie-details/movie-details.component";
 import {ErrorPageComponent} from "./error-page/error-page.component";
 import {AuthGuardService} from "./services/auth-guard.service";
+import {AdminComponent} from "./admin/admin.component";
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/movies', pathMatch: "full"},
   {path: 'movies', component: MoviesComponent},
   {path: 'movies/:id', component: MovieDetailsComponent},
   {path: 'rentals', canActivate: [AuthGuardService], component: RentalsComponent},
+  {path: 'admin', component: AdminComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'login', component: LoginComponent},
   {path: '**', component: ErrorPageComponent, data: {message: 'Page not found!'}}

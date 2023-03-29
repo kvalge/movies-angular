@@ -18,7 +18,12 @@
         <label for="password">Password</label>
         <input type="password" id="password" placeholder="at least 4 characters" formControlName="password" minlength="6">
       </div>
-      <button type="submit" >Sign up</button>
+      <span class="alert" *ngIf="userForm.invalid && userForm.touched">
+         Insert all details!
+       </span>
+      <div>
+        <button type="submit">Sign up</button>
+      </div>
     </form>
   </div>
 </div>

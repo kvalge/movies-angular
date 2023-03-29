@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="input-base">
+    <h5 *ngIf="!editMode">Fill the form to add a new movie</h5>
+    <div id="top">
+      <form [formGroup]="movieForm" (ngSubmit)="submitMovie()">
+        <div>
+          <label for="name">Title</label>
+          <input type="text" id="name" formControlName="name">
+        </div>
+        <div>
+          <label for="categoryName">Genre</label>
+          <input type="text" id="categoryName" formControlName="categoryName" required>
+        </div>
+        <span class="alert" *ngIf="movieForm.invalid && movieForm.touched">
+         Insert all details!
+       </span>
+        <div>
+          <button type="submit">{{!editMode ? 'Add Book' : 'Edit'}}</button>
+          <button type="button" (click)="onCancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
