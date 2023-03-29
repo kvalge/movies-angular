@@ -17,6 +17,8 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import {AuthService} from "./services/auth.service";
 import { MovieDetailsComponent } from './pages/movies/movie-list/movie-details/movie-details.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import {AuthGuardService} from "./services/auth-guard.service";
+import {GuardService} from "./services/guard.service";
 
 @NgModule({
   declarations: [
@@ -38,7 +40,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [MovieService, DataService, AuthService],
+  providers: [MovieService, DataService, AuthService, AuthGuardService, GuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

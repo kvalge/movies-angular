@@ -3,6 +3,7 @@ import {MovieDetailsModel} from "./movie-details.model";
 import {ActivatedRoute, Router} from "@angular/router";
 
 import {DataService} from "../../../../services/data.service";
+import {MovieService} from "../../../../services/movie.service";
 
 @Component({
   selector: 'app-movie-detail',
@@ -16,6 +17,7 @@ export class MovieDetailsComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
+    private movieService: MovieService,
     private route: ActivatedRoute,
     private router: Router) {
   }
