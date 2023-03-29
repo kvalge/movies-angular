@@ -16,6 +16,7 @@ import {DataService} from "./services/data.service";
 import { MoviesComponent } from './pages/movies/movies.component';
 import {AuthService} from "./services/auth.service";
 import { MovieDetailsComponent } from './pages/movies/movie-list/movie-details/movie-details.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MovieDetailsComponent } from './pages/movies/movie-list/movie-details/m
     RentalsComponent,
     MoviesComponent,
     MovieDetailsComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,

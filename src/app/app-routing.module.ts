@@ -6,6 +6,7 @@ import {SignupComponent} from "./pages/authentication/signup/signup.component";
 import {LoginComponent} from "./pages/authentication/login/login.component";
 import {MoviesComponent} from "./pages/movies/movies.component";
 import {MovieDetailsComponent} from "./pages/movies/movie-list/movie-details/movie-details.component";
+import {ErrorPageComponent} from "./error-page/error-page.component";
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/movies', pathMatch: "full"},
@@ -13,7 +14,8 @@ const appRoutes: Routes = [
   {path: 'movies/:id', component: MovieDetailsComponent},
   {path: 'rentals', component: RentalsComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: '**', component: ErrorPageComponent}
 ]
 
 @NgModule({
