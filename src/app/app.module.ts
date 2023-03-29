@@ -13,10 +13,9 @@ import {LoginComponent} from './pages/authentication/login/login.component';
 import {RentalsComponent} from './pages/rentals/rentals.component';
 import {MovieService} from "./services/movie.service";
 import {DataService} from "./services/data.service";
-import { MovieDetailListComponent } from './pages/movies/movie-detail-list/movie-detail-list.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import {AuthService} from "./services/auth.service";
-import { MovieDetailsComponent } from './pages/movies/movie-detail-list/movie-details/movie-details.component';
+import { MovieDetailsComponent } from './pages/movies/movie-list/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { MovieDetailsComponent } from './pages/movies/movie-detail-list/movie-de
     SignupComponent,
     LoginComponent,
     RentalsComponent,
-    MovieDetailListComponent,
     MoviesComponent,
     MovieDetailsComponent,
   ],

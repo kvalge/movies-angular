@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 import {DataService} from "../../../services/data.service";
-import {MovieDetailsModel} from "../movie-detail-list/movie-details.model";
-import {Router} from "@angular/router";
+import {MovieDetailsModel} from "./movie-details/movie-details.model";
 
 @Component({
   selector: 'app-movie-list',
@@ -13,14 +12,10 @@ export class MovieListComponent implements OnInit {
 
   details: MovieDetailsModel[];
 
-  constructor(private dataService: DataService, private router: Router) {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
     this.details = this.dataService.getAllDetails();
-  }
-
-  toRental() {
-    this.router.navigate(['rentals']);
   }
 }

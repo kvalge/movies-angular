@@ -2,13 +2,14 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
 
-import {MovieDetailsModel} from "../pages/movies/movie-detail-list/movie-details.model";
+import {MovieDetailsModel} from "../pages/movies/movie-list/movie-details/movie-details.model";
+import {MovieService} from "./movie.service";
 
 @Injectable({providedIn: 'root'})
 export class DataService {
   movies = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private movieService: MovieService) {
   }
 
   getAllDetails() {
@@ -19,7 +20,7 @@ export class DataService {
           details.push(r);
         }
       }))
-      .subscribe();
+      .subscribe()
     return details;
   }
 }

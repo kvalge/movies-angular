@@ -1,14 +1,15 @@
 import {MovieModel} from "../pages/movies/movie.model";
+import {MovieDetailsModel} from "../pages/movies/movie-list/movie-details/movie-details.model";
 
 export class MovieService {
 
-  private movies: MovieModel[] = [];
+  private movieDetails: MovieDetailsModel[] = [];
 
-  setMovies(movies: MovieModel[]) {
-    this.movies = movies;
+  setDetails(details: MovieDetailsModel[]) {
+    this.movieDetails = details;
   }
 
   getMovies() {
-    return this.movies;
+    return this.movieDetails;
   }
 }

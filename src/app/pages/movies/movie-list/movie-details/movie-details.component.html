@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div *ngFor="let detail of details">
+        <div *ngIf="detail.id == id">
+          <p class="title">{{detail.movieName}}</p>
+          <p class="year">{{detail.year}}</p>
+          <img class="img" src="{{detail.image}}" alt="{{detail.movieName}}"
+          >
+          <div>
+            <p>Directed by: {{detail.director}}</p>
+            <p>Written by: {{detail.writer}}</p>
+            <p>Stars: {{detail.stars}}</p>
+            <p>Origin: {{detail.country}}</p>
+            <p>{{detail.description}}</p>
+            <button (click)="toRental()">{{detail.price}}</button>
+            <p>___________________</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

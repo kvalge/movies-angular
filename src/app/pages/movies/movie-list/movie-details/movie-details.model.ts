@@ -1,4 +1,5 @@
 export class MovieDetailsModel {
+  public id: number;
   public director: string;
   public writer: string;
   public stars: string;
@@ -9,7 +10,8 @@ export class MovieDetailsModel {
   public image: string;
   public movieName: string;
 
-  constructor(director: string, writer: string, stars: string, year: string, country: string, description: string, price: string, image: string, movieName: string) {
+  constructor(id: number, director: string, writer: string, stars: string, year: string, country: string, description: string, price: string, image: string, movieName: string) {
+    this.id = id;
     this.director = director;
     this.writer = writer;
     this.stars = stars;

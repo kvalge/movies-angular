@@ -7,10 +7,8 @@
         <img class="img" src="{{detail.image}}" alt="{{detail.movieName}}"
         >
         <div>
-          <p>Directed by: {{detail.director}}</p>
-          <p>Stars: {{detail.stars}}</p>
           <p>{{detail.description}}</p>
-          <button (click)="toRental()">{{detail.price}}</button>
+          <a class="select" [routerLink]="['/movies', detail.id]">Select</a>
           <p>___________________</p>
         </div>
       </div>
