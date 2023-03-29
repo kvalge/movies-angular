@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <div *ngFor="let detail of details">
+      <a class="select" [routerLink]="['/movies', detail.id]" *ngFor="let detail of details">
         <p class="title">{{detail.movieName}}</p>
         <p class="year">{{detail.year}}</p>
         <img class="img" src="{{detail.image}}" alt="{{detail.movieName}}"
         >
         <div>
           <p>{{detail.description}}</p>
-          <a class="select" [routerLink]="['/movies', detail.id]">Select</a>
+          <button>Select</button>
           <p>___________________</p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>

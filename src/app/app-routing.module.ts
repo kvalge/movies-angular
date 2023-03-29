@@ -16,7 +16,7 @@ const appRoutes: Routes = [
   {path: 'rentals', canActivate: [AuthGuardService], component: RentalsComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'login', component: LoginComponent},
-  {path: '**', component: ErrorPageComponent}
+  {path: '**', component: ErrorPageComponent, data: {message: 'Page not found!'}}
 ]
 
 @NgModule({
