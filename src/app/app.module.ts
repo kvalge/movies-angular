@@ -22,6 +22,7 @@ import {GuardService} from "./services/guard.service";
 import { AdminComponent } from './admin/admin.component';
 import { MovieEditComponent } from './admin/movie-edit/movie-edit.component';
 import { DetailsEditComponent } from './admin/details-edit/details-edit.component';
+import { DetailsItemComponent } from './admin/details-item/details-item.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { DetailsEditComponent } from './admin/details-edit/details-edit.componen
     AdminComponent,
     MovieEditComponent,
     DetailsEditComponent,
+    DetailsItemComponent,
   ],
   imports: [
     BrowserModule,
