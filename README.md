@@ -1,6 +1,18 @@
-# MoviesAngular
+# Movie Project (in process)  
+The movie application which allows to manage authenticated and authorized users and movies.  
+Used IDE: IntelliJ 2023.1 EAP.  
+Front-end application to https://github.com/kvalge/movies-security-docker-spring.  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
+## Project set up  
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.  
+Integrated Bootstrap v3.4.1.  
+
+## Structure and functionalities  
+admin: to add and edit movies and movie details.  
+layout: for header.  
+pages:  
+signup to register new users.  
+movies to generate the list of movies on movies page and select one movie.
 
 ## Development server
 
