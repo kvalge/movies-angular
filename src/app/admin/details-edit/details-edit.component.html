@@ -1,1 +1,48 @@
-<p>details-edit works!</p>
+<div class="container">
+  <div class="input-base">
+    <h5 *ngIf="!editMode">Fill the form to add a new movie</h5>
+    <div id="top">
+      <form [formGroup]="detailsForm" (ngSubmit)="submitDetails()">
+        <div>
+          <label for="director">Director(s)</label>
+          <input type="text" id="director" formControlName="director">
+        </div>
+        <div>
+          <label for="writer">Writer(s)</label>
+          <input type="text" id="writer" formControlName="writer" required>
+        </div>
+        <div>
+          <label for="stars">Stars</label>
+          <input type="text" id="stars" formControlName="stars" required>
+        </div>
+        <div>
+          <label for="year">Release year</label>
+          <input type="text" id="year" formControlName="year" required>
+        </div>
+        <div>
+          <label for="country">Country or countries of origin</label>
+          <input type="text" id="country" formControlName="country" required>
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <input type="text" id="description" formControlName="description" required>
+        </div>
+        <div>
+          <label for="image">Image url</label>
+          <input type="text" id="image" formControlName="image" required>
+        </div>
+        <div>
+          <label for="movieName">Movie title</label>
+          <input type="text" id="movieName" formControlName="movieName" required>
+        </div>
+        <span class="alert" *ngIf="detailsForm.invalid && detailsForm.touched">
+         Insert all details!
+       </span>
+        <div>
+          <button type="submit">{{!editMode ? 'Add Details' : 'Edit'}}</button>
+          <button type="button" (click)="onCancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

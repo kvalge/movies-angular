@@ -39,7 +39,12 @@ export class DataService {
 
   addNewMovie(movie: MovieModel) {
     let headers = new HttpHeaders().set('header-name', 'header-value');
-    this.http.post('http://localhost:8080/movie/new', movie, { headers: headers })
+    this.http.post('http://localhost:8080/movie/new', movie, {headers: headers})
+      .subscribe();
+  }
+
+  addDetails(details: MovieDetailsModel) {
+    this.http.post('http://localhost:8080/details/new', details)
       .subscribe();
   }
 }
