@@ -31,6 +31,7 @@ export class MovieEditComponent implements OnInit {
     }
     this.movieForm.reset();
     this.movie = null;
+    document.getElementById("edit").scrollIntoView({behavior: 'smooth'});
   }
 
   onCancel() {
