@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from "./app-routing.module";
 import {RouterLinkActive, RouterOutlet} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './layout/header/header.component';
@@ -46,7 +46,8 @@ import { DetailsItemComponent } from './admin/details-item/details-item.componen
     RouterLinkActive,
     RouterOutlet,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [MovieService, DataService, AuthService, AuthGuardService, GuardService],
   bootstrap: [AppComponent]

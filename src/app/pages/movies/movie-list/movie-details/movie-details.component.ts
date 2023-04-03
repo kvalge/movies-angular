@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, OnDestroy, OnInit} from '@angular/core';
 import {MovieDetailsModel} from "./movie-details.model";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -10,10 +10,9 @@ import {MovieService} from "../../../../services/movie.service";
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
-export class MovieDetailsComponent implements OnInit {
+export class MovieDetailsComponent implements OnInit, DoCheck {
 
-  details: MovieDetailsModel[];
-  id = 0;
+  details: MovieDetailsModel;
 
   constructor(
     private dataService: DataService,
@@ -23,8 +22,13 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    this.details = this.dataService.getAllDetails();
+    let id = this.route.snapshot.params['id'];
+    this.dataService.getDetailsById(id);
+    this.details = null;
+  }
+
+  ngDoCheck() {
+    this.details = this.movieService.getDetails();
   }
 
   toRental() {
