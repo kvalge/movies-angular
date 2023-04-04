@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import {ElementRef, Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {map} from "rxjs/operators";
 
@@ -46,22 +46,9 @@ export class DataService {
   }
 
   getDetailsByMovieName(movieName: string) {
-    this.http.get<MovieDetailsModel>('http://localhost:8080/details/name?movieName=' + movieName)
+    return this.http.get<MovieDetailsModel>('http://localhost:8080/details/name?movieName=' + movieName)
       .pipe(map((details) => {
         return details;
       }))
-      .subscribe(details => {
-        this.movieService.setDetails(details);
-      });
-  }
-
-  fetchAllDetails() {
-    this.http.get<MovieDetailsModel[]>('http://localhost:8080/details/all')
-      .pipe(map((details) => {
-    return details;
-      }))
-      .subscribe(details =>{
-        this.movieService.setAllDetails(details);
-      })
   }
 }

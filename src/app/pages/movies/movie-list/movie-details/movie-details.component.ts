@@ -19,7 +19,6 @@ export class MovieDetailsComponent implements OnInit, DoCheck {
     private movieService: MovieService,
     private route: ActivatedRoute,
     private router: Router) {
-    this.details = this.movieService.getDetails();
   }
 
   ngOnInit(): void {

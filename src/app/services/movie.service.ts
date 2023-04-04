@@ -1,7 +1,8 @@
 import {MovieDetailsModel} from "../pages/movies/movie-list/movie-details/movie-details.model";
 import {Injectable} from "@angular/core";
+import {Observable} from "rxjs";
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class MovieService {
 
   private allDetails: MovieDetailsModel[] = [];

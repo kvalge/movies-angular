@@ -1,17 +1,21 @@
-<h5>Find movie by name</h5>
-<div>
-  <div class="input-base">
-    <label for="movieName">Title</label>
-    <input type="text" id="movieName" name="movieName" [(ngModel)]="movieName">
-    <button (click)="getMovie()">Find</button>
-  </div>
+<div class="container">
+  <h5>Find movie by name</h5>
   <div>
-    <div>
-<!--      {{details.movieName}}
-      {{details.director}}-->
-
+    <div class="input-base">
+      <label for="movieName">Title</label>
+      <input type="text" id="movieName" name="movieName" [(ngModel)]="movieName">
+      <div *ngIf="editMode">
+        <p>{{details.movieName}}</p>
+        <p>{{details.year}}</p>
+        <p>{{details.director}}</p>
+        <p>{{details.writer}}</p>
+        <p>{{details.stars}}</p>
+        <p>{{details.country}}</p>
+        <p>{{details.description}}</p>
+        <img class="img" src="{{details.image}}" alt="{{details.movieName}}"
+        >
+      </div>
+      <button (click)="getMovie()">{{!editMode ? 'Find Movie' : 'Edit'}}</button>
     </div>
-
   </div>
 </div>
-
