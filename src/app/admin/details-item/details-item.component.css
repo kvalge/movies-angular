@@ -3,8 +3,12 @@ button {
   margin-left: 20px;
 }
 
+input{
+  margin-bottom: 30px;
+}
+
 p {
-  margin-left: 27rem;
   font-size: 13px;
   font-weight: bold;
+  text-align: center;
 }

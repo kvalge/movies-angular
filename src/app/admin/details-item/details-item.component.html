@@ -1,28 +1,21 @@
 <div class="container">
-  <h5>Find movie by name</h5>
-  <div>
+  <div *ngIf="!editMode">
+    <h5>Find movie by name</h5>
     <div class="input-base">
       <label for="movieName">Title</label>
       <input type="text" id="movieName" name="movieName" [(ngModel)]="movieName">
-      <div *ngIf="!error">
-        <div *ngIf="editMode">
-          <p>{{details.movieName}}</p>
-          <p>{{details.year}}</p>
-          <p>{{details.director}}</p>
-          <p>{{details.writer}}</p>
-          <p>{{details.stars}}</p>
-          <p>{{details.country}}</p>
-          <p>{{details.description}}</p>
-          <img class="img" src="{{details.image}}" alt="{{details.movieName}}"
-          >
-        </div>
-      </div>
-      <button (click)="getMovie()">{{!editMode ? 'Find Movie' : 'Edit'}}</button>
-    </div>
-    <div class="alert alert-danger" *ngIf="error">
-      <h1>An Error Occurred!</h1>
-      <p>{{error}}</p>
-
     </div>
   </div>
+  <div *ngIf="editMode">
+    <p>{{details.movieName}}</p>
+    <p>{{details.year}}</p>
+    <p>{{details.director}}</p>
+    <p>{{details.writer}}</p>
+    <p>{{details.stars}}</p>
+    <p>{{details.country}}</p>
+    <p>{{details.description}}</p>
+    <img class="img" src="{{details.image}}" alt="{{details.movieName}}"
+    >
+  </div>
+  <button (click)="getMovie()">{{!editMode ? 'Find Movie' : 'Edit'}}</button>
 </div>

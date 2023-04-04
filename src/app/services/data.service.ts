@@ -1,5 +1,5 @@
-import {ElementRef, Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
 
 import {MovieDetailsModel} from "../pages/movies/movie-list/movie-details/movie-details.model";
@@ -13,8 +13,7 @@ export class DataService {
   }
 
   addNewMovie(movie: MovieModel) {
-    let headers = new HttpHeaders().set('header-name', 'header-value');
-    this.http.post('http://localhost:8080/movie/new', movie, {headers: headers})
+    this.http.post('http://localhost:8080/movie/new', movie)
       .subscribe();
   }
 

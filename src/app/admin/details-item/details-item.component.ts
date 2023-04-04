@@ -24,8 +24,6 @@ export class DetailsItemComponent implements OnInit {
     this.dataService.getDetailsByMovieName(this.movieName)
       .subscribe(details => {
           this.details = details;
-        }, error => {
-          this.error = error.message;
         }
       )
     this.editMode = true;
