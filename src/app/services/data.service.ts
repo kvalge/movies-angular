@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {map} from "rxjs/operators";
 
 import {MovieDetailsModel} from "../pages/movies/movie-list/movie-details/movie-details.model";
@@ -24,7 +24,10 @@ export class DataService {
 
   getAllDetails() {
     let details = [];
-    this.http.get<MovieDetailsModel[]>('http://localhost:8080/details/all')
+    this.http.get<MovieDetailsModel[]>('http://localhost:8080/details/all',
+      {
+        headers: new HttpHeaders({'Custom-Header': 'Header'})
+      })
       .pipe(map((res) => {
         for (let r of res) {
           details.push(r);
