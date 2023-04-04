@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnDestroy, OnInit} from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import {MovieDetailsModel} from "./movie-details.model";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -19,11 +19,13 @@ export class MovieDetailsComponent implements OnInit, DoCheck {
     private movieService: MovieService,
     private route: ActivatedRoute,
     private router: Router) {
+    this.details = this.movieService.getDetails();
   }
 
   ngOnInit(): void {
     let id = this.route.snapshot.params['id'];
     this.dataService.getDetailsById(id);
+    this.details = this.movieService.getDetails();
     this.details = null;
   }
 

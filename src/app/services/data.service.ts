@@ -38,12 +38,20 @@ export class DataService {
   getDetailsById(id: number) {
     this.http.get<MovieDetailsModel>('http://localhost:8080/details/id?id=' + id)
       .pipe(map((details) => {
-        console.log("Data: " + id);
         return details;
       }))
       .subscribe(details => {
         this.movieService.setDetails(details);
-        console.log("Data sub: " + details.id)
+      });
+  }
+
+  getDetailsByMovieName(movieName: string) {
+    this.http.get<MovieDetailsModel>('http://localhost:8080/details/name?movieName=' + movieName)
+      .pipe(map((details) => {
+        return details;
+      }))
+      .subscribe(details => {
+        this.movieService.setDetails(details);
       });
   }
 

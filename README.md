@@ -1,6 +1,6 @@
 # Movie Project (in process)  
 The movie application which allows to manage authenticated and authorized users and movies.  
-Used IDE: IntelliJ 2023.1 EAP.  
+Used IDE: IntelliJ 2023.1.  
 Front-end application to https://github.com/kvalge/movies-security-docker-spring.  
 
 ## Project set up  

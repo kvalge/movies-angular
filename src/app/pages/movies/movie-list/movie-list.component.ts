@@ -1,7 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {DataService} from "../../../services/data.service";
 import {MovieDetailsModel} from "./movie-details/movie-details.model";
+import {MovieService} from "../../../services/movie.service";
 
 @Component({
   selector: 'app-movie-list',
@@ -10,12 +11,16 @@ import {MovieDetailsModel} from "./movie-details/movie-details.model";
 })
 export class MovieListComponent implements OnInit {
 
-  details: MovieDetailsModel[];
+  allDetails: MovieDetailsModel[];
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private movieService: MovieService) {
   }
 
   ngOnInit(): void {
-    this.details = this.dataService.getAllDetails();
+    this.allDetails = this.dataService.getAllDetails();
+  }
+
+  onSelect(details) {
+    this.movieService.setDetails(details);
   }
 }

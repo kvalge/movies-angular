@@ -1,5 +1,7 @@
 import {MovieDetailsModel} from "../pages/movies/movie-list/movie-details/movie-details.model";
+import {Injectable} from "@angular/core";
 
+@Injectable()
 export class MovieService {
 
   private allDetails: MovieDetailsModel[] = [];
