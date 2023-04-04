@@ -12,6 +12,7 @@ export class DetailsItemComponent implements OnInit {
   details: MovieDetailsModel;
   movieName: string = '';
   editMode: boolean;
+  error = null;
 
   constructor(private dataService: DataService) {
   }
@@ -22,8 +23,11 @@ export class DetailsItemComponent implements OnInit {
   getMovie() {
     this.dataService.getDetailsByMovieName(this.movieName)
       .subscribe(details => {
-        this.details = details;
-      })
+          this.details = details;
+        }, error => {
+          this.error = error.message;
+        }
+      )
     this.editMode = true;
     this.movieName = '';
   }
