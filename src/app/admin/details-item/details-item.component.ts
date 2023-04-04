@@ -20,9 +20,10 @@ export class DetailsItemComponent implements OnInit {
   }
 
   getMovie() {
-    this.dataService.getDetailsByMovieName(this.movieName).subscribe(details => {
-      this.details = details;
-    })
+    this.dataService.getDetailsByMovieName(this.movieName)
+      .subscribe(details => {
+        this.details = details;
+      })
     this.editMode = true;
     this.movieName = '';
   }
