@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {MovieModel} from "../../pages/movies/movie.model";
+
 import {DataService} from "../../services/data.service";
 import {MovieDetailsModel} from "../../pages/movies/movie-list/movie-details/movie-details.model";
 
@@ -34,6 +34,9 @@ export class DetailsEditComponent implements OnInit {
   submitDetails() {
     if (!this.editMode) {
       this.dataService.addDetails(this.detailsForm.value);
+    } else {
+      this.dataService.editDetails(this.detailsForm.value);
+      this.editMode = false;
     }
     this.detailsForm.reset();
     this.details = null;
@@ -43,4 +46,19 @@ export class DetailsEditComponent implements OnInit {
     this.detailsForm.reset();
   }
 
+  editDetails(details) {
+    document.getElementById("top").scrollIntoView({behavior: 'smooth'});
+    this.editMode = true;
+    this.details = details;
+    this.detailsForm.patchValue({
+      director: details.director,
+      writer: details.writer,
+      stars: details.stars,
+      year: details.year,
+      country: details.country,
+      description: details.description,
+      image: details.image,
+      movieName: details.movieName
+    })
+  }
 }

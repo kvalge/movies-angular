@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+
 import {MovieDetailsModel} from "../../pages/movies/movie-list/movie-details/movie-details.model";
 import {DataService} from "../../services/data.service";
 
@@ -12,7 +13,6 @@ export class DetailsItemComponent implements OnInit {
   details: MovieDetailsModel;
   movieName: string = '';
   editMode: boolean;
-  error = null;
 
   constructor(private dataService: DataService) {
   }

@@ -1,3 +1,8 @@
+<div id="edit">
+  <app-details-edit #detailsEdit></app-details-edit>
+  <br>
+</div>
+
 <div class="container">
   <div *ngIf="!editMode">
     <h5>Find movie by name</h5>
@@ -17,5 +22,6 @@
     <img class="img" src="{{details.image}}" alt="{{details.movieName}}"
     >
   </div>
-  <button (click)="getMovie()">{{!editMode ? 'Find Movie' : 'Edit'}}</button>
+  <button *ngIf="!editMode" (click)="getMovie()">Find Movie</button>
+  <button *ngIf="editMode" (click)="detailsEdit.editDetails(details)">Edit</button>
 </div>

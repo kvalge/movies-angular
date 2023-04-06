@@ -53,4 +53,9 @@ export class DataService {
         return details;
       }))
   }
+
+  editDetails(request: MovieDetailsModel) {
+    this.http.put('http://localhost:8080/details', request)
+      .subscribe();
+  }
 }
