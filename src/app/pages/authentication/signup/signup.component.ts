@@ -32,9 +32,10 @@ export class SignupComponent implements OnInit {
         next: (data) => console.log('data', data),
         error: (err) => {
           this.error = err.message;
+          this.router.navigate(['signup']);
         }
       });
     this.userForm.reset();
-    // this.router.navigate(['movies']);
+    this.router.navigate(['movies']);
   }
 }
