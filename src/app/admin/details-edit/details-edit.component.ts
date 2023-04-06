@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 import {DataService} from "../../services/data.service";
@@ -14,6 +14,9 @@ export class DetailsEditComponent implements OnInit {
   detailsForm: FormGroup;
   details: MovieDetailsModel;
   editMode: boolean = false;
+  @Output() editReset = new EventEmitter<boolean>();
+  resetEditMode: boolean = false;
+
 
   constructor(private dataService: DataService) {
   }
@@ -37,6 +40,7 @@ export class DetailsEditComponent implements OnInit {
     } else {
       this.dataService.editDetails(this.detailsForm.value);
       this.editMode = false;
+      this.editReset.emit(this.resetEditMode);
     }
     this.detailsForm.reset();
     this.details = null;

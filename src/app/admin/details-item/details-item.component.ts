@@ -29,4 +29,8 @@ export class DetailsItemComponent implements OnInit {
     this.editMode = true;
     this.movieName = '';
   }
+
+  resetEdit(edit) {
+    this.editMode = edit;
+  }
 }
