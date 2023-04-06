@@ -12,6 +12,7 @@ import {AuthService} from "../../../services/auth.service";
 export class SignupComponent implements OnInit {
 
   userForm: FormGroup;
+  error: string = null;
 
   constructor(private authService: AuthService, private router: Router) {
   }
@@ -26,8 +27,14 @@ export class SignupComponent implements OnInit {
   }
 
   onRegister() {
-    this.authService.register(this.userForm.value);
+    this.authService.register(this.userForm.value)
+      .subscribe({
+        next: (data) => console.log('data', data),
+        error: (err) => {
+          this.error = err.message;
+        }
+      });
     this.userForm.reset();
-    this.router.navigate(['movies']);
+    // this.router.navigate(['movies']);
   }
 }

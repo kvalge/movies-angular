@@ -9,10 +9,6 @@ export class AuthService {
   }
 
   register(userModel: UserModel) {
-    this.http.post('http://localhost:8080/register', userModel)
-      .subscribe({
-        next: (data) => console.log('data', data),
-        error: (err)=>alert(err)
-      });
+    return this.http.post('http://localhost:8080/register', userModel)
   }
 }
