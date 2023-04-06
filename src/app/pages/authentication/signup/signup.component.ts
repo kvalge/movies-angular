@@ -37,4 +37,8 @@ export class SignupComponent implements OnInit {
     this.userForm.reset();
     // this.router.navigate(['movies']);
   }
+
+  closeError() {
+    this.error = null;
+  }
 }

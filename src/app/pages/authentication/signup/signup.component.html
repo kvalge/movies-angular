@@ -2,6 +2,7 @@
   <div class=row>
     <div class="alert alert-danger" *ngIf="error">
       <p>{{error}}</p>
+      <button (click)="closeError()">OK</button>
     </div>
     <h5>Enter your details to register as a user</h5>
     <form [formGroup]="userForm" (ngSubmit)="onRegister()">
