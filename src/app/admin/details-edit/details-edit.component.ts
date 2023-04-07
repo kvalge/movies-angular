@@ -48,6 +48,8 @@ export class DetailsEditComponent implements OnInit {
 
   onCancel() {
     this.detailsForm.reset();
+    this.editMode = false;
+    this.editReset.emit(this.resetEditMode);
   }
 
   editDetails(details) {
