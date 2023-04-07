@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="container">
+  <div class="row">
+    <div class="alert alert-danger" *ngIf="error">
+      <p>{{error}}</p>
+      <br>
+      <button (click)="closeError()">OK</button>
+    </div>
+    <h5>Enter your details to log in</h5>
+    <form [formGroup]="userForm" (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" formControlName="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="at least 4 characters" formControlName="password"
+               minlength="4">
+      </div>
+      <span class="alert" *ngIf="userForm.invalid && userForm.touched">
+         Insert all details!
+       </span>
+      <div>
+        <button type="submit">Log in</button>
+      </div>
+    </form>
+  </div>
+</div>
